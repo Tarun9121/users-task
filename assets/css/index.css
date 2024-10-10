@@ -1,0 +1,23 @@
+body {
+    background-color: #212121;
+    color: #fff;
+}
+form[name="users"] {
+    gap: 20px;
+    padding: 10px;
+}
+.search-bar {
+    padding: 10px;
+}
+.type-of-users {
+    padding: 10px;
+}
+
+.table-row, .table-row-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+}
+.table-row > div, .table-row-header > div {
+    padding: 10px;
+    border: 1px solid #fff;
+}

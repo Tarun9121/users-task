@@ -1,0 +1,168 @@
+/* basic_styles.css */
+* {
+    transition-duration: 100ms;
+}
+
+/* Color-related classes */
+.text-blue {
+    color: #0a66c2;
+}
+.text-grey {
+    color: #674636;
+}
+.sub-text {
+    color: #949191;
+}
+
+/* border-related classes */
+.border-black {
+    border: 1px solid black;
+}
+.border-white {
+    border: 3px solid #fff;
+}
+.rounded {
+    border-radius: 5px;
+}
+
+/* Font-related classes */
+.font-bold {
+    font-weight: bolder;
+}
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.no-underline {
+    text-decoration: none;
+}
+.transform-captilize {
+    text-transform: capitalize;
+}
+.text-justify {
+    text-align: justify;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+
+/* Button-related classes */
+.button {
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+.button-blue {
+    border: 1px solid #0a66c2;
+}
+.button-blue:hover {
+    border: 3px solid #0a66c2;
+    background-color: #dde7f1;
+}
+.button-grey {
+    border: 1px solid #825B32;
+    color: #825B32;
+}
+.button-grey:hover {
+    border: 3px solid #674636;
+}
+.active {
+    background-color: #0a66c2;
+    color: #fff;
+    border: 3px solid #0a66c2;
+}
+.active:hover {
+    color:#0a66c2;
+}
+
+/* Layout-related classes */
+.position-relative {
+    position: relative;
+}
+.sticky {
+    position: sticky;
+}
+.top {
+    top: 0;
+}
+.top-60 {
+    top: 60px;
+}
+.p-0 {
+    padding: 0px;
+}
+.p-5 {
+    padding: 5px;
+}
+.py-5 {
+    padding: 7px 0px;
+}
+.p-10 {
+    padding: 10px;
+}
+.pr-10 {
+    padding-right: 10px;
+}
+.pb-0 {
+    padding-bottom: 0px;
+}
+.pb-5 {
+    padding-bottom: 5px;
+}
+.pb-10 {
+    padding-bottom: 10px;
+}
+.m-0 {
+    margin: 0px;
+}
+.ml-10 {
+    margin-left: 10px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+/* flex props */
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+/* alignment props */
+.align-items-center {
+    align-items: center;
+}
+.inline-flex {
+    display: inline-flex;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-around {
+    justify-content: space-around;
+}
+/* gap props */
+.gap-20 {
+    gap: 20px;
+}
+.gap-10 {
+    gap: 10px;
+}
+.gap-5 {
+    gap: 5px;
+}
