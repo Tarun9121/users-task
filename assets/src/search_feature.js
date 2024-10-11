@@ -1,7 +1,3 @@
-window.onload = function() {
-    addContentToTable("all-types")
-}
-
 const users = [{
     firstName: "John",
     lastName: "Doe",
@@ -82,6 +78,12 @@ const users = [{
 }
 ];
 
+var searchType = document.getElementById("type-of-users")
+let searchBar = document.getElementById("search-bar")
+var table = document.getElementById("table");
+
+
+
 function createRow() {
     let divTableRow = document.createElement("div");
     divTableRow.classList.add("table-row");
@@ -95,8 +97,7 @@ function createRow() {
     return divTableRow;
 }
 
-var tableHeader = document.getElementById("table");
-function addContent(user) {
+function addContentByUserObject(user) {
     let row = createRow()
     let childs = row.children;
     let keys = Object.keys(user);
@@ -105,16 +106,7 @@ function addContent(user) {
         childs[i].innerText = user[keys[i]]
     }
 
-    tableHeader.append(row);    
-}
-
-function addContentToTable(type) {
-    if(type === "all-types") {
-        users.forEach(user => addContent(user));
-    }
-    else {
-        users.filter(user => user.type == type).forEach(user => addContent(user));
-    }
+    table.append(row);    
 }
 
 function cleanUp() {
@@ -122,17 +114,36 @@ function cleanUp() {
     rows.forEach(row => row.remove());
 }
 
-function typeOfUsers(element) {
-    cleanUp();
-    addContentToTable(element.value);
-}
+searchType.addEventListener("change", function() {
+    search();
+});
 
-let searchBar = document.getElementById("search-bar")
+searchBar.addEventListener("input", function() {
+    search();
+});
+
+(function() {
+    search("all-types")
+})();
 
 function search() {
     cleanUp();
-    users.filter(user => {
-        let fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
-        return fullName.includes(searchBar.value.toLowerCase())
-    }).forEach(user => addContent(user));
+
+    if(searchType.value == "all-types") {
+        users
+        .filter(user => {
+            let fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
+            return fullName.includes(searchBar.value.toLowerCase())
+        })
+        .forEach(user => addContentByUserObject(user));
+    }
+    else {
+        users
+        .filter(user => user.type == searchType.value)
+        .filter(user => {
+            let fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
+            return fullName.includes(searchBar.value.toLowerCase())
+        })
+        .forEach(user => addContentByUserObject(user));
+    }
 }
