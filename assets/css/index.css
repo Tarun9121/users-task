@@ -21,3 +21,26 @@ form[name="users"] {
     padding: 10px;
     border: 1px solid #fff;
 }
+.table-header {
+    font-weight: 600;
+}
+
+.captilize-text {
+    text-transform: capitalize;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #212121; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

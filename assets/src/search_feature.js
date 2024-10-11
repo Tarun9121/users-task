@@ -90,7 +90,8 @@ function createRow() {
 
     for(let i = 1; i <= 4; i++) {
         let divChild = document.createElement("div");
-        divChild.classList.add("table-content");
+        if(i != 3)
+            divChild.classList.add("table-content", "captilize-text")
         divTableRow.append(divChild);
     }
 
