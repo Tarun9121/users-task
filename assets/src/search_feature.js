@@ -114,18 +114,6 @@ function cleanUp() {
     rows.forEach(row => row.remove());
 }
 
-searchType.addEventListener("change", function() {
-    search();
-});
-
-searchBar.addEventListener("input", function() {
-    search();
-});
-
-(function() {
-    search("all-types")
-})();
-
 function search() {
     cleanUp();
 
@@ -147,3 +135,15 @@ function search() {
         .forEach(user => addContentByUserObject(user));
     }
 }
+
+searchType.addEventListener("change", function() {
+    search();
+});
+
+searchBar.addEventListener("input", function() {
+    search();
+});
+
+(function() {
+    search("all-types")
+})();
