@@ -15,7 +15,7 @@ form[name="users"] {
 
 .table-row, .table-row-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
 }
 .table-row > div, .table-row-header > div {
     padding: 10px;
