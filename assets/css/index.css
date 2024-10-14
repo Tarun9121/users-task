@@ -1,6 +1,6 @@
 body {
-    background-color: #212121;
-    color: #fff;
+    background-color: #FEF9F2;
+    color: #000;
 }
 form[name="users"] {
     gap: 20px;
@@ -15,18 +15,42 @@ form[name="users"] {
 
 .table-row, .table-row-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
 }
 .table-row > div, .table-row-header > div {
     padding: 10px;
-    border: 1px solid #fff;
+    border: 1px solid #789DBC;
 }
 .table-header {
     font-weight: 600;
+    text-align: center;
+}
+.table-row-header > div {
+    border-width: 3px 1.5px 3px 1.5px;
+}
+.table-row-header > div:first-child {
+    border-width: 3px 1.5px 3px 3px;
+}
+.table-row-header > div:last-child {
+    border-width: 3px 3px 3px 1.5px;
+}
+.search-bar, .type-of-users {
+    border: 3px solid #789DBC;
 }
 
 .captilize-text {
     text-transform: capitalize;
+}
+.icon {
+    background-color: #8ABFA3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -34,13 +58,9 @@ form[name="users"] {
 }
 
 ::-webkit-scrollbar-track {
-    background: #212121; 
+    background: #FEF9F2; 
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background-color: #789DBC;
 }

@@ -11,24 +11,33 @@ const users = [{firstName: "hema",lastName: "viraja",email: "john.doe@example.co
 }, {firstName: "James",lastName: "Thomas",email: "james.thomas@example.com",type: "user"
 }, {firstName: "Isabella",lastName: "Moore",email: "isabella.moore@example.com",type: "admin"
 }, {firstName: "Benjamin",lastName: "Jackson",email: "benjamin.jackson@example.com",type: "user"
-}, {firstName: "Mia",lastName: "Harris",email: "mia.harris@example.com",type: "user"
-}, {firstName: "Jacob",lastName: "White",email: "jacob.white@example.com",type: "moderator"
-}
+}, {firstName: "Mia",lastName: "harris",email: "mia.harris@example.com",type: "user"
+}, {firstName: "jacob",lastName: "White",email: "jacob.white@example.com",type: "moderator"}
 ];
 
 var searchType = document.getElementById("type-of-users")
 let searchBar = document.getElementById("search-bar")
 var table = document.getElementById("table");
 
-
 function createRow() {
     let divTableRow = document.createElement("div");
     divTableRow.classList.add("table-row");
 
-    for(let i = 1; i <= 5; i++) {
+    let fullNameElement = document.createElement("div")
+    let iconPart = document.createElement("div")
+    let fullNamePart = document.createElement("div")
+
+    fullNameElement.classList.add("flex", "gap-10")
+    iconPart.classList.add("icon")
+    fullNamePart.classList.add("captilize-text", "full-name")
+
+    fullNameElement.append(iconPart, fullNamePart)
+    divTableRow.append(fullNameElement)
+
+    for(let i = 2; i <= 3; i++) {
         let divChild = document.createElement("div");
 
-        if(i != 4)
+        if(i != 2)
             divChild.classList.add("table-content", "captilize-text")
 
         divTableRow.append(divChild);
@@ -46,14 +55,23 @@ function addContentByUserObject(user) {
     let row = createRow()
     let childs = row.children;
     let keys = Object.keys(user);
+    let iconPart = row.querySelector(".icon")
+    let fullNamePart = row.querySelector(".full-name")
     
-    childs[0].innerText = `${user.firstName.charAt(0)}${user.lastName.charAt(0)}`
+    iconPart.innerText = `${user.firstName.charAt(0)}${user.lastName.charAt(0)}`
+    
+    if(user.firstName && user.lastName) {
+        fullNamePart.innerText = `${user.firstName} ${user.lastName}`
+    }
+    else {
+        fullNamePart.innerText = "---"
+    }
 
-    for(let i = 0; i < 4; i++) {
-        if(user[keys[i]])
-            childs[i+1].innerText = user[keys[i]]
+    for(let i = 1; i < 3; i++) {
+        if(user[keys[i+1]])
+            childs[i].innerText = user[keys[i+1]]
         else 
-            childs[i+1].innerText = "---"
+            childs[i].innerText = "---"
     }
 
     table.append(row);    
