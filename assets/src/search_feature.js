@@ -83,32 +83,32 @@ function sortByFullName(user1, user2) {
 
 function search() {
     cleanUp();
+    let filteredUsers;
 
     if(searchType.value == "all-types") {
-        users.sort(sortByFullName);
-
-        users
+        filteredUsers = users
         .filter(user => {
             let fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
             return fullName.includes(searchBar.value.toLowerCase())
         })
-        .forEach(user => addContentByUserObject(user));
     }
     else {
-        let filteredUsers = users
+        filteredUsers = users
         .filter(user => user.type == searchType.value)
         .filter(user => {
             let fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
             return fullName.includes(searchBar.value.toLowerCase())
         });
-
+    }
+    if(!filteredUsers.length) {
+        alert("no more data")
+    }else {
         filteredUsers.sort(sortByFullName);
         filteredUsers.forEach(user => addContentByUserObject(user));
     }
 } 
 
 searchType.addEventListener("change", search);
-
 searchBar.addEventListener("input", search);
 
 (function() {
